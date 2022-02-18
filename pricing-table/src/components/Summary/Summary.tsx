@@ -1,4 +1,5 @@
 import { Container } from "./styles";
+import vistoImg from '../../assets/visto.svg'
 
 
 export function Summary() {
@@ -16,11 +17,14 @@ export function Summary() {
                 </p>
                 <hr />
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
+                <button type="button">
+                    Assinar
+                </button>
             </div>
             <div>
                 <header>
@@ -34,11 +38,14 @@ export function Summary() {
                 </p>
                 <hr />
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
+                <button type="button" className="basic-plan">
+                    Assinar
+                </button>
             </div>
             <div>
                 <header>
@@ -52,11 +59,14 @@ export function Summary() {
                 </p>
                 <hr />
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
                 <h4>
-                    Lorem ipsum dolor sit amet
+                    <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
+                <button type="button">
+                    Assinar
+                </button>
             </div>
         </Container>
     );
