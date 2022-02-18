@@ -3,7 +3,7 @@ import { darken } from 'polished'
 
 
 
-export const Container = styled.div`
+export const Container = styled.main`
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -71,7 +71,7 @@ export const Container = styled.div`
             }
         } 
 
-        .basic-plan {
+        .button-blue {
             color: #e7e7e7;
             background-color: var(--blue);
             border: none;
@@ -84,6 +84,8 @@ export const Container = styled.div`
         }
 
     }
+
+    
 
 
 `

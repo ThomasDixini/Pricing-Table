@@ -1,8 +1,12 @@
 import { Container } from "./styles";
 import vistoImg from '../../assets/visto.svg'
 
+interface SummaryProps {
+    onOpenModal: () => void;
+}
 
-export function Summary() {
+
+export function Summary( {onOpenModal} : SummaryProps) {
     return(
         <Container>
             <div>
@@ -22,7 +26,7 @@ export function Summary() {
                 <h4>
                     <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
-                <button type="button">
+                <button type="button" onClick={onOpenModal}>
                     Assinar
                 </button>
             </div>
@@ -43,7 +47,7 @@ export function Summary() {
                 <h4>
                     <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
-                <button type="button" className="basic-plan">
+                <button type="button" className="button-blue" onClick={onOpenModal}>
                     Assinar
                 </button>
             </div>
@@ -64,7 +68,7 @@ export function Summary() {
                 <h4>
                     <img src={vistoImg} alt="Visto" /> Lorem ipsum dolor sit amet
                 </h4>
-                <button type="button">
+                <button type="button" onClick={onOpenModal}>
                     Assinar
                 </button>
             </div>
