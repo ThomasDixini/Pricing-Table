@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import Modal from 'react-modal'
-import { Container } from './styles';
+import { Buttons, Container } from './styles';
 
 interface NewModalPlanProps {
     isOpen: boolean;
@@ -8,7 +9,9 @@ interface NewModalPlanProps {
 
 export function NewModalPlan({isOpen, onRequestClose}: NewModalPlanProps) {
 
-    
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [plan, setPlan] = useState("");
 
     return(
         <Modal
@@ -22,16 +25,34 @@ export function NewModalPlan({isOpen, onRequestClose}: NewModalPlanProps) {
         >
             <Container>
             <h1>Plano</h1>
-            <input type="text" placeholder="Seu nome"/>
-            <input type="email" placeholder="Seu Email"/>
-            <input type="search" />
+            <input 
+            type="text" 
+            placeholder="Seu nome"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            
+            />
+            <input 
+            type="email" 
+            placeholder="Seu Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
+            <input 
+            type="search" 
+            placeholder="Plano"
+            value={plan}
+            onChange={(e) => setPlan(e.target.value)}
+            />
 
-            <button>
-                Cancelar
-            </button>
-            <button type="submit">
-                Assinar
-            </button>
+                <Buttons>
+                    <button type="button" onClick={onRequestClose}>
+                        Cancelar
+                    </button>
+                    <button type="submit" className="btn-signed">
+                        Assinar
+                    </button>
+                </Buttons>
             </Container>
             
         </Modal>
