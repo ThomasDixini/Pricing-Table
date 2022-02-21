@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from 'react-modal'
+import { api } from '../../services/api';
 import { Buttons, Container } from './styles';
 
 interface NewModalPlanProps {
@@ -12,6 +13,18 @@ export function NewModalPlan({isOpen, onRequestClose}: NewModalPlanProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [plan, setPlan] = useState("");
+
+
+    function createNewPlan() {
+
+        const data = {
+            name,
+            email,
+            plan
+        }
+
+        api.post('plans', data)
+    }
 
     return(
         <Modal
@@ -49,7 +62,7 @@ export function NewModalPlan({isOpen, onRequestClose}: NewModalPlanProps) {
                     <button type="button" onClick={onRequestClose}>
                         Cancelar
                     </button>
-                    <button type="submit" className="btn-signed">
+                    <button type="submit" className="btn-signed" onSubmit={createNewPlan}>
                         Assinar
                     </button>
                 </Buttons>

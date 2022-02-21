@@ -1,5 +1,7 @@
 import { Container } from "./styles";
 import vistoImg from '../../assets/visto.svg'
+import { useEffect } from "react";
+import { api } from "../../services/api";
 
 interface SummaryProps {
     onOpenModal: () => void;
@@ -7,6 +9,15 @@ interface SummaryProps {
 
 
 export function Summary( {onOpenModal} : SummaryProps) {
+
+
+    useEffect(() => {
+        api.get('/plans')
+        .then(response => {console.log(response.data)})
+    }, [])
+
+
+
     return(
         <Container>
             <div>
